@@ -1,0 +1,25 @@
+DpI2CEEPROM2
+Modified Library (3/29/2013 by Tom Sales) to incorporate the following:
+1. Adjust for the 64 byte page boundary of the 32K chip in the DpI2CEEPROM library.
+2. Enable reading and writing large byte blocks to any location up to the top memory address.
+
+This was accomplished by merging this library and the M24LC256 library by James Coliz, Jr. 2011.
+
+The modified library functions as both authors intended, but in a single program.
+
+DpI2CEEPROM2.h - Library definition of DpI2CEEPROM class
+
+DpI2CEEPROM2 Arduino library provides function for writing and
+reading different type of data to I2C EEPROM. (AT24C*).
+
+Description from maniacbug:
+"Create one instance of this class for each chip in your circuit.  This allows you to have up to 8 of these active at any time. This class is optimized to take advantage of the page size of the chip.  The chip has a 5msec write cycle now matter how many bytes you push it, up to its page size (64 bytes for 24LC256.  To get higher throughput, increase the size of the Wire buffer by increasing BUFFER_LENGTH in Wire.h and TWI_BUFFER_LENGTH in utility/twi.h.  Increase them to 34 for 32-byte writes, and to 66 for 64-byte writes." 
+
+Some code was copied from http://arduino.cc/playground/Main/LibraryForI2CEEPROM by Rob Tillaart
+Source code is provided as is, without any warranty.
+
+Some code was copied from https://github.com/maniacbug/M24LC256/blob/master/M24LC256.cpp
+
+Distributed under CC BY v 3.0
+
+original code http://pcb.daince.net/doku.php?id=arduino_code
